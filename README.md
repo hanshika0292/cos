@@ -10,6 +10,13 @@ remote VMs, alongside browser tabs and docs), **cos** keeps track of them so you
 - **Daily brief** (optional): a short Claude Haiku summary of what each work stream did, what's pending,
   and what needs you, including the docs and tabs you had open. It opens as a clean page in your browser.
 
+<p align="center">
+  <img src="docs/menu-bar.png" width="400" alt="cos menu bar: sessions grouped by needs you, working and your turn, plus to-dos, recent docs and the brief">
+  &nbsp;
+  <img src="docs/brief.png" width="420" alt="A cos daily brief: needs you now, work streams, beyond the terminal, today, tomorrow and suggested to-dos">
+</p>
+<p align="center"><sub>Menu bar (left) and an evening brief (right). The session names and brief contents are demo data.</sub></p>
+
 It's built to be light: there's no daemon and no local model. Agents report through hooks that append one
 line to a file. The menu bar reads local files once a minute (about 0.1 s of CPU), and a background
 snapshot of tabs and windows runs every 5 minutes. The only LLM call is the brief.
