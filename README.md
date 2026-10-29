@@ -100,6 +100,22 @@ snap.js (tabs/windows, every 5 min) ─┘
 The first time window tracking runs, macOS asks whether SwiftBar may control your browsers (Automation).
 Other apps' window titles also need SwiftBar enabled under Accessibility.
 
+## Status and limitations
+
+- **Early, used daily on one setup:** an Intel MacBook running two Claude Code accounts in Orca and iTerm,
+  Gemini CLI, and one Ubuntu VM over ssh. Codex and `gcloud` VMs are covered only by the smoke test so far.
+- **macOS only** for the menu bar, notifications and window tracking. VMs can be any Linux or macOS machine
+  with Python 3.6+.
+- **Jumping to a session** works for Orca, iTerm2, Terminal.app and tmux. Other terminals are only brought
+  to the front.
+- **VM updates arrive by polling** every 5 minutes, so a VM session that needs you can take up to 5 minutes
+  to show up.
+- **Sessions started before installing** appear right away but have no prompt history until their next prompt.
+  The brief reads Claude transcripts to fill the gap.
+- **Window tracking needs macOS permissions** (Automation for browsers, Accessibility for other apps). It
+  records titles and URLs only, never page contents.
+- **Briefs need the Claude Code CLI** and count against your own Claude usage (one short Haiku call each).
+
 ## Uninstall
 
 ```sh
