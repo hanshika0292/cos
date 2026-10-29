@@ -32,7 +32,9 @@ case ":$PATH:" in
 esac
 
 # guided setup; answers come from the keyboard even when this script is piped from curl
-if [ -r /dev/tty ] && [ -z "${COS_NONINTERACTIVE-}" ]; then
+if [ -n "${COS_SKIP_SETUP-}" ]; then
+  echo "skipped setup; run \`cos setup\` when ready"
+elif [ -r /dev/tty ] && [ -z "${COS_NONINTERACTIVE-}" ]; then
   "$COS_HOME/bin/cos" setup < /dev/tty
 else
   "$COS_HOME/bin/cos" setup --yes
