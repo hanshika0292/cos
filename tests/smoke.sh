@@ -17,6 +17,7 @@ COS_SKIP=1 sh -c "echo '{\"session_id\":\"x\"}' | sh '$H' Stop"
 
 grep -q '"tool_response"' "$COS_HOME/events.jsonl" && fail "PostToolUse payload not trimmed"
 grep -q '"session_id":"x"' "$COS_HOME/events.jsonl" && fail "COS_SKIP not honoured"
+cos >/dev/null || fail "bare cos"
 out="$(cos status -a)"
 echo "$out" | grep -q "Needs you" || fail "permission wait not shown"
 echo "$out" | grep -q "gemini task" || fail "gemini session missing"

@@ -67,7 +67,7 @@ def age(ts):
         return "?"
     s = max(0, now() - int(ts))
     if s < 60:
-        return "now"
+        return "<1m"
     if s < 3600:
         return "%dm" % (s // 60)
     if s < 86400:
@@ -1235,7 +1235,7 @@ def doctor():
         check("cos-hook.sh" in gh, "Gemini CLI hooks", "run `cos install-hooks`")
     if os.path.exists(EVENTS):
         a = age(os.path.getmtime(EVENTS))
-        check(True, "last agent event: %s" % ("just now" if a == "now" else a + " ago"))
+        check(True, "last agent event: %s" % ("just now" if a == "<1m" else a + " ago"))
     else:
         check(False, "no agent events yet", "send a prompt in any agent session, then run `cos`")
     check(bool(find_claude(required=False)), "claude CLI (used by `cos brief`)", "install Claude Code to get briefs")
@@ -1522,7 +1522,7 @@ def main():
 
     con = refresh()
     if cmd == "status":
-        print_status(con, args.all)
+        print_status(con, getattr(args, "all", False))
     elif cmd == "add":
         i = add_todo(con, " ".join(args.text), parse_due(args), args.stream)
         print("added #%s" % i)
