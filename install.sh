@@ -21,9 +21,12 @@ PY="$(command -v python3 || true)"
 
 # stable launcher (no spaces, survives moving the checkout): ~/.cos/bin/cos -> python3 cos.py
 mkdir -p "$COS_HOME/bin" "$HOME/.local/bin"
+# Falls back to any python3 on PATH if the one found now disappears later (e.g. after migrating to a new Mac).
 cat > "$COS_HOME/bin/cos" <<EOF
 #!/bin/sh
-exec "$PY" "$DIR/cos.py" "\$@"
+PY="$PY"
+[ -x "\$PY" ] || PY="\$(command -v python3)" || { echo "cos needs python3 (on macOS: xcode-select --install)" >&2; exit 1; }
+exec "\$PY" "$DIR/cos.py" "\$@"
 EOF
 chmod +x "$COS_HOME/bin/cos" "$DIR/cos.py" "$DIR/hooks/cos-hook.sh"
 ln -sf "$COS_HOME/bin/cos" "$HOME/.local/bin/cos"
