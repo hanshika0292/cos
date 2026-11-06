@@ -1,4 +1,6 @@
 #!/bin/sh
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Hanshika Gupta
 # cos hook: append one JSON line per agent event to ~/.cos/events.jsonl.
 # Usage: cos-hook.sh <Event> [agent]     agent: claude (default) | gemini
 # Must be fast, print nothing (stdout of some hooks is fed to the model), and never fail the session.

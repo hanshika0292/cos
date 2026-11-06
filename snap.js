@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+// Copyright (c) 2026 Hanshika Gupta
 // cos window snapshot: browser tabs, iTerm tabs, other app windows, and what's in front.
 // Run with `osascript -l JavaScript snap.js`. Never launches an app; each query is one bulk Apple Event.
 function run() {

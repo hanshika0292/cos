@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Hanshika Gupta
 """cos — a tiny chief of staff for many parallel coding-agent sessions.
 
 Data sources (no LLM involved):
