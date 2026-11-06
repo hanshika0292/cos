@@ -1,4 +1,6 @@
 #!/bin/sh
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Hanshika Gupta
 # Smoke test: hook -> ingest -> status/todos/export/codex, in a throwaway COS_HOME. Touches nothing else.
 set -e
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"

@@ -1,4 +1,6 @@
 #!/bin/sh
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2026 Hanshika Gupta
 # cos installer. From a checkout:  ./install.sh
 # Or:  curl -fsSL https://raw.githubusercontent.com/hanshika0292/cos/main/install.sh | sh
 set -e
