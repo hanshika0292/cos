@@ -1509,7 +1509,7 @@ def main():
     if cmd == "config":
         cfg = load_config()
         if args.key == "snap_exclude" and len(args.value) == 2:
-            lst = cfg.setdefault("snap_exclude", [])
+            lst = cfg.setdefault("snap_exclude", list(DEFAULT_EXCLUDE))   # edit the defaults, don't replace them
             if args.value[0] == "add" and args.value[1] not in lst:
                 lst.append(args.value[1])
             elif args.value[0] == "rm" and args.value[1] in lst:
