@@ -1,5 +1,6 @@
 # cos: macOS menu bar and CLI to track parallel Claude Code, Gemini CLI and Codex sessions
 
+[![CI](https://github.com/hanshika0292/cos/actions/workflows/ci.yml/badge.svg)](https://github.com/hanshika0292/cos/actions/workflows/ci.yml)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![macOS menu bar and CLI](https://img.shields.io/badge/macOS-menu%20bar%20%2B%20CLI-lightgrey.svg)
 ![Python 3.6+, standard library only](https://img.shields.io/badge/Python-3.6%2B%20%C2%B7%20stdlib%20only-3776AB.svg)
